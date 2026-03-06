@@ -624,47 +624,46 @@
     color: var(--light);
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     font-weight: 300;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .plan-list li:first-child {
-    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 12px 0;
   }
 
   .plan-list li::before {
-    content: '→';
-    color: var(--accent);
-    font-weight: 400;
-    font-size: 16px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
     flex-shrink: 0;
   }
 
   .plan-btn {
     display: inline-block;
     padding: 16px 40px;
-    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
     color: var(--white);
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-decoration: none;
     text-align: center;
-    transition: border-color 0.3s, background 0.3s;
+    transition: border-color 0.3s;
     width: fit-content;
-    border-radius: 4px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .plan-btn:hover { border-color: var(--white); }
 
   .plan-btn-accent {
-    background: var(--accent);
-    border-color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
   }
 
-  .plan-btn-accent:hover { background: #2563eb; border-color: #2563eb; }
+  .plan-btn-accent:hover { border-color: #2563eb; color: #2563eb; }
 
   /* CTA */
   .cta-section {
@@ -857,7 +856,7 @@
 
     <div class="plan plan-featured">
       <div class="plan-label">Pro <span class="plan-badge">Recomendado</span></div>
-      <h3 class="plan-name">Tu página + nosotros siempre contigo.</h3>
+      <h3 class="plan-name">Siempre contigo.</h3>
       <p class="plan-desc">Disponibles siempre para actualizaciones, promociones o cualquier cambio que necesites.</p>
       <ul class="plan-list">
         <li>Todo lo del plan Básico</li>
