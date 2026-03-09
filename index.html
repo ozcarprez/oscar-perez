@@ -642,6 +642,14 @@
     flex-shrink: 0;
   }
 
+  .plan-list li.guarantee {
+    color: var(--accent);
+  }
+
+  .plan-list li.guarantee::before {
+    background: var(--accent);
+  }
+
   .plan-btn {
     display: inline-block;
     padding: 18px 48px;
@@ -797,6 +805,10 @@
     .why-grid { grid-template-columns: 1fr; gap: 48px; }
     .cta-section { padding: 100px 20px; }
     footer { padding: 28px 20px; flex-direction: column; gap: 12px; text-align: center; }
+    .plans-grid { grid-template-columns: 1fr; }
+    .plans-divider { display: none; }
+    .plan { padding: 0 0 64px 0; }
+    .plan-featured { padding: 64px 0; }
   }
 </style>
 </head>
@@ -815,13 +827,7 @@
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
 
-  <div class="hero-top">
-    <div class="hero-badge">
-      <div class="badge-dot"></div>
-      Tijuana, Baja California
-    </div>
-    
-  </div>
+
 
   <h1 class="hero-title">
     <span class="line1">Diseñamos</span><br>
@@ -889,6 +895,7 @@
         <li>Adaptada a celular y computadora</li>
         <li>Sin límite de secciones</li>
         <li>Entrega en horas</li>
+        <li class="guarantee">Primero hacemos tu página, después pagas</li>
       </ul>
       <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20el%20plan%20básico" class="plan-btn" target="_blank">Cotizar</a>
     </div>
@@ -904,6 +911,7 @@
         <li>Cambios y actualizaciones</li>
         <li>Nuevas promociones cuando quieras</li>
         <li>Soporte directo por WhatsApp</li>
+        <li class="guarantee">Primero hacemos tu página, después pagas</li>
       </ul>
       <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20el%20plan%20Pro" class="plan-btn plan-btn-accent" target="_blank">Cotizar</a>
     </div>
@@ -920,15 +928,14 @@
   </div>
 </section>
 
-
 <footer>
   <a href="#" class="logo">clever<span>media</span></a>
   <div class="footer-right">
-    <a href="/cdn-cgi/l/email-protection#aec6c1c2cfeecdc2cbd8cbdcc3cbcac7cf80c3d6"><span class="__cf_email__" data-cfemail="e68e898a87a6858a839083948b83828f87c88b9e">[email&#160;protected]</span></a>
+    <a href="mailto:hola@clevermedia.mx">hola@clevermedia.mx</a>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -938,4 +945,13 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.svc, .why-item, .stat').for
+  document.querySelectorAll('.svc, .why-item, .stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
