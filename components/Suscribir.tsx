@@ -1,8 +1,6 @@
 /**
  * Suscripción. Una sola línea, sin tarjeta ni modal.
- *
- * Conectar con Beehiiv: reemplaza action por la URL de tu formulario
- * (Beehiiv > Audience > Subscribe Forms > Embed) o pega su iframe aquí.
+ * Los correos llegan a beehiiv.
  */
 export default function Suscribir() {
   return (
@@ -13,8 +11,9 @@ export default function Suscribir() {
       </p>
 
       <form
-        action="REEMPLAZAR_CON_URL_DE_BEEHIIV"
+        action="https://oscars-newsletter-7fd1a8.beehiiv.com/subscribe"
         method="post"
+        target="_blank"
         className="mt-6 flex max-w-md flex-wrap items-end gap-x-4 gap-y-3"
       >
         <label htmlFor="correo" className="sr-only">
@@ -26,11 +25,11 @@ export default function Suscribir() {
           type="email"
           required
           placeholder="tu@correo.com"
-          className="min-w-0 flex-1 border-0 border-b border-[var(--color-tinta)] bg-transparent pb-1.5 placeholder:text-[var(--color-tinta-suave)] focus:outline-none focus:border-[var(--color-rojo)]"
+          className="min-w-0 flex-1 border-0 border-b border-[var(--color-tinta)] bg-transparent pb-1.5 placeholder:text-[var(--color-tinta-suave)] focus:border-[var(--color-rojo)] focus:outline-none"
         />
         <button
           type="submit"
-          className="border-b border-[var(--color-rojo)] pb-1.5 text-[var(--color-rojo)] transition-colors hover:bg-[var(--color-rojo)] hover:px-2 hover:text-[var(--color-papel)]"
+          className="border-b border-[var(--color-rojo)] pb-1.5 text-[var(--color-rojo)] transition-colors hover:text-[var(--color-tinta)]"
         >
           Suscribirme
         </button>
