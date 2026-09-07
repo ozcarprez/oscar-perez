@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Tokens — libreta de comerciante
+   Papel rayado de contabilidad, tinta azul, rojo de marcar.
+   --------------------------------------------------------------- */
+@theme {
+  --color-papel: #e9eae3;
+  --color-papel-hondo: #dfe0d7;
+  --color-tinta: #1b2a4a;
+  --color-tinta-suave: #5a6784;
+  --color-rojo: #b4342a;
+  --color-linea: #c8cbbe;
+
+  --font-texto: "Newsreader", Georgia, "Times New Roman", serif;
+
+  --text-titular: clamp(2.75rem, 8vw, 5.5rem);
+  --text-entrada: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    font-family: var(--font-texto);
+    font-optical-sizing: auto;
+    font-size: 1.1875rem;
+    line-height: 1.65;
+  }
+
+  ::selection {
+    background-color: var(--color-rojo);
+    color: var(--color-papel);
+  }
+
+  a {
+    color: inherit;
+    text-decoration-color: var(--color-linea);
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    text-decoration-color: var(--color-rojo);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-rojo);
+    outline-offset: 3px;
+  }
+}
+
+/* Titular de portada: el único elemento ruidoso del sitio. */
+.titular {
+  font-size: var(--text-titular);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 14ch;
+}
+
+/* Número de entrada en el margen, como anotación a mano. */
+.folio {
+  color: var(--color-rojo);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* Cuerpo de una entrada. Medida corta, jerarquía por espacio. */
+.prosa {
+  max-width: 62ch;
+}
+.prosa > * + * {
+  margin-top: 1.5em;
+}
+.prosa h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-top: 2.5em;
+  line-height: 1.3;
+}
+.prosa strong {
+  font-weight: 600;
+}
+.prosa em {
+  font-style: italic;
+}
+.prosa blockquote {
+  border-left: 2px solid var(--color-rojo);
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--color-tinta-suave);
+}
+.prosa hr {
+  border: 0;
+  border-top: 1px solid var(--color-linea);
+  margin: 3em 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
