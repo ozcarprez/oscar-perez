@@ -1,40 +1,29 @@
-/**
- * Suscripción. Una sola línea, sin tarjeta ni modal.
- *
- * Conectar con Beehiiv: reemplaza action por la URL de tu formulario
- * (Beehiiv > Audience > Subscribe Forms > Embed) o pega su iframe aquí.
- */
+"use client";
+
+import { useEffect, useRef } from "react";
+
 export default function Suscribir() {
+  const contenedor = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!contenedor.current || contenedor.current.childElementCount > 0) return;
+    const s = document.createElement("script");
+    s.src = "https://subscribe-forms.beehiiv.com/v3/loader.js";
+    s.setAttribute(
+      "data-beehiiv-form",
+      "794e513b-abf5-448b-9844-0b7fce29995c"
+    );
+    s.async = true;
+    contenedor.current.appendChild(s);
+  }, []);
+
   return (
     <section className="border-t border-[var(--color-linea)] py-12">
-      <p className="prosa">
+      <p className="prosa mb-6">
         Escribo sobre cómo funcionan los negocios por dentro. Una entrada nueva
         cada semana, directo a tu correo.
       </p>
-
-      <form
-        action="REEMPLAZAR_CON_URL_DE_BEEHIIV"
-        method="post"
-        className="mt-6 flex max-w-md flex-wrap items-end gap-x-4 gap-y-3"
-      >
-        <label htmlFor="correo" className="sr-only">
-          Tu correo
-        </label>
-        <input
-          id="correo"
-          name="email"
-          type="email"
-          required
-          placeholder="tu@correo.com"
-          className="min-w-0 flex-1 border-0 border-b border-[var(--color-tinta)] bg-transparent pb-1.5 placeholder:text-[var(--color-tinta-suave)] focus:outline-none focus:border-[var(--color-rojo)]"
-        />
-        <button
-          type="submit"
-          className="border-b border-[var(--color-rojo)] pb-1.5 text-[var(--color-rojo)] transition-colors hover:bg-[var(--color-rojo)] hover:px-2 hover:text-[var(--color-papel)]"
-        >
-          Suscribirme
-        </button>
-      </form>
+      <div ref={contenedor} />
     </section>
   );
 }
