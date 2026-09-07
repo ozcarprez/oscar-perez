@@ -40,10 +40,10 @@ export default async function Entrada({
 
   return (
     <>
-      <article className="py-12">
+      <article className="mx-auto w-full max-w-3xl px-6 py-12 md:px-10">
         <header className="mb-12">
-          <p className="folio">{String(entrada.folio).padStart(3, "0")}</p>
-          <h1 className="mt-3 max-w-[18ch] text-[var(--text-entrada)] font-medium leading-[1.1] tracking-tight text-balance">
+          <p className="folio text-[0.9375rem]">{String(entrada.folio).padStart(3, "0")}</p>
+          <h1 className="mt-3 max-w-[18ch] text-[clamp(2rem,5vw,3rem)] font-medium leading-[1.1] tracking-tight text-balance">
             {entrada.titulo}
           </h1>
           <p className="mt-4 text-[0.9375rem] text-[var(--color-tinta-suave)]">
@@ -56,7 +56,9 @@ export default async function Entrada({
         </div>
       </article>
 
-      <Suscribir />
+      <div className="mx-auto w-full max-w-3xl px-6 md:px-10">
+        <Suscribir />
+      </div>
     </>
   );
 }
