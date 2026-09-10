@@ -30,11 +30,14 @@ Commit, push, y Vercel hace deploy solo.
 
 ## Pendientes
 
-- En `components/Suscribir.tsx`, reemplaza `REEMPLAZAR_CON_URL_DE_BEEHIIV` con la URL
-  de tu formulario (Beehiiv > Audience > Subscribe Forms > Embed).
 - En `app/layout.tsx`, `app/sitemap.ts` y `app/rss.xml/route.ts`, cambia
   `https://oscarperez.mx` por tu dominio real.
 - Agrega `app/opengraph-image.tsx` si quieres una imagen propia al compartir.
+- `app/servicios/page.tsx` es la página de servicios (páginas web y software a medida).
+  El contacto usa tu correo (`ozcarprez@gmail.com`); si quieres agregar WhatsApp,
+  añade el link junto al de correo en el hero y en el CTA final.
+- La sección "Prueba, no promesa" solo muestra este sitio como ejemplo. En cuanto
+  tengas proyectos de clientes que puedas enseñar públicamente, agrégalos ahí.
 
 ## Diseño
 

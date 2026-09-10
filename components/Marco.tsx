@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
  */
 export default function Marco({ children }: { children: React.ReactNode }) {
   const ruta = usePathname();
-  const oscuro = ruta === "/";
+  const oscuro = ruta === "/" || ruta === "/servicios";
 
   const fondo = oscuro
     ? "bg-[var(--color-verde)] text-[var(--color-papel)]"
@@ -22,9 +22,12 @@ export default function Marco({ children }: { children: React.ReactNode }) {
     <div className={`flex min-h-screen flex-col ${fondo}`}>
       <header className="mx-auto flex w-full max-w-6xl items-baseline justify-between px-6 py-6 md:px-10">
         <Link href="/">Oscar Pérez</Link>
-        <nav className="flex gap-6">
+        <nav className="flex items-baseline gap-6">
           <Link href="/escritos" className={tenue}>
             Escritos
+          </Link>
+          <Link href="/servicios" className="text-[var(--color-rojo)]">
+            Servicios
           </Link>
         </nav>
       </header>

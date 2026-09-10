@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { leerEntradas } from "@/lib/entradas";
 import Portada from "@/components/Portada";
 import Frases from "@/components/Frases";
@@ -25,6 +26,20 @@ export default function Inicio() {
       />
 
       <Frases />
+
+      <section className="mx-auto w-full max-w-6xl px-6 md:px-10">
+        <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-white/10 py-10">
+          <p className="text-[var(--color-papel-suave)]">
+            También diseño y construyo páginas web y software a medida.
+          </p>
+          <Link
+            href="/servicios"
+            className="border-b border-[var(--color-rojo)] pb-1 text-[var(--color-rojo)] transition-colors hover:border-[var(--color-papel)] hover:text-[var(--color-papel)]"
+          >
+            Ver servicios →
+          </Link>
+        </div>
+      </section>
 
       {resto.length > 0 && (
         <section className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10">
